@@ -3,7 +3,6 @@ import { InicioComponent } from "./paginas/inicio/inicio.component";
 import { LoginComponent } from "./paginas/login/login.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
-import { ToastrModule } from "ngx-toastr";
 import { CoreRoutingModule } from "./core-routing.module";
 import { SharedModule } from "../shared/shared.module";
 
@@ -16,7 +15,6 @@ import { SharedModule } from "../shared/shared.module";
     ReactiveFormsModule,
     SharedModule,
     CommonModule,
-    ToastrModule.forRoot()
   ],
   providers: []
 })

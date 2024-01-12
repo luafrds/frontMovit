@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ToastrModule } from 'ngx-toastr';
 import { CoreModule } from './core/core.module';
 
 @NgModule({
@@ -13,7 +12,6 @@ import { CoreModule } from './core/core.module';
     RouterModule,
     ReactiveFormsModule,
     CoreModule,
-    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
