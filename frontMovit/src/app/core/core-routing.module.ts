@@ -6,7 +6,7 @@ import { LoginComponent } from "./paginas/login/login.component";
 const rotas: Routes = [
 	{
 		path: "",
-    pathMatch: "full",
+		pathMatch: "full",
 		redirectTo: "inicio"
 	},
 	{
@@ -14,8 +14,25 @@ const rotas: Routes = [
 		component: InicioComponent,
 	},
 	{
-		path: 'login',
+		path: "login",
 		component: LoginComponent,
+	},
+	{
+		path: 'login',
+		children: [
+			{
+				path: 'usuarios',
+				loadChildren: () => import('../usuarios/usuario.module').then(x => x.UsuarioModule)
+			},
+			{
+				path: 'membros',
+				loadChildren: () => import('../membros/membro.module').then(x => x.MembroModule)
+			},
+			{
+				path: 'cantinas',
+				loadChildren: () => import('../cantinas/cantina.module').then(x => x.CantinaModule)
+			},
+		],
 	},
 ];
 
@@ -24,6 +41,7 @@ const rotas: Routes = [
   imports: [RouterModule.forRoot(rotas)],
   exports: [RouterModule],
 })
+
 export class CoreRoutingModule {
   constructor() {}
 }
