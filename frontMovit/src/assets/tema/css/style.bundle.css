@@ -39,6 +39,11 @@
     "Liberation Mono", "Courier New", monospace;
 }
 
+*{
+  padding: 0;
+  margin: 0;
+}
+
 body {
   margin: 0;
   font-family: "Poppins";
@@ -322,3 +327,110 @@ h6,
 .pl-5,
 .px-5 {
   padding-left: 3rem !important; }
+
+.prevenirSelect {
+    user-select: none;
+    pointer-events: none;
+  }
+  
+
+/*TELA LOGIN*/
+body#paginaLogin{
+  min-height: 100vh;
+}
+
+#paginaLogin{
+  background: #002E6B;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+
+#tituloLogin{
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+#tituloLogin h3{
+  font-family: "Jost";
+  font-size: 70%;
+  color: #FFD747;
+  letter-spacing: 7px;
+  font-weight: bold;
+}
+
+body#paginaLogin h6{
+  font-weight: 100;
+  color: #ffffff;
+  font-size: 85%;
+  letter-spacing: .2px;
+  margin-bottom: 1.2em;
+}
+
+#usuarioForm, #senhaForm{
+  display: flex;
+  justify-content: center;
+  margin-bottom: .6em;
+}
+
+.imgUsuario, .imgSenha{
+  font-size: 0;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #BDBDBD;
+  border-radius: 7px 0 0 7px;
+}
+
+.imgUsuario{
+  background: #D9D9D9 url(/assets/media/icones/person.svg) no-repeat center;
+  background-size: 35px;
+}
+
+.imgSenha{
+  background: #D9D9D9 url(/assets/media/icones/key.svg) no-repeat center;
+  background-size: 35px;
+}
+
+.inputLogin{
+  width: 250px;
+  height: 40px;
+  font-size: 16px;
+  background-color: #ffffff;
+  border: 1px solid #BDBDBD;
+  border-left: none;
+  border-radius: 0 7px 7px 0;
+}
+
+.inputLogin::placeholder{
+  font-size: 17px;
+  color: #808080;
+}
+
+body#paginaLogin input[type=text], body#paginaLogin input[type=password] {
+  padding-left: 10px;    
+}
+
+body#paginaLogin input:focus {
+  outline: none;
+  /*box-shadow: 0 0 1px 0.5px #fff;*/
+}
+
+body#paginaLogin button[type=submit]{
+  margin-top: 5em !important;
+  background-color: #FFD747;
+  color:#002E6B;
+  border: none;
+  width: 300px;
+  height: 40px;
+  font-weight: 600;
+  border-radius: 7px;
+}
+
+body#paginaLogin button[type=submit]:hover{
+  box-shadow: 0 0 4px .3px #fff5d2;
+  cursor: pointer;
+}
+/*FIM TELA LOGIN*/
