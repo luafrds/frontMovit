@@ -419,7 +419,7 @@ body#paginaLogin input:focus {
 }
 
 body#paginaLogin button[type=submit]{
-  margin-top: 5em !important;
+  margin-top: 5rem;
   background-color: #FFD747;
   color:#002E6B;
   border: none;
@@ -430,7 +430,13 @@ body#paginaLogin button[type=submit]{
 }
 
 body#paginaLogin button[type=submit]:hover{
-  box-shadow: 0 0 4px .3px #fff5d2;
+  /*box-shadow: 0 2px 5px .4px #000000;*/
   cursor: pointer;
+  width: 310px;
+  height: 46px;
+  margin-top: 4.7em;
+  border-radius: 9px;
+  transition: all 0.05s;
+  font-size: 105%;
 }
 /*FIM TELA LOGIN*/
