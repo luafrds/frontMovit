@@ -2,6 +2,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { InicioComponent } from "./paginas/inicio/inicio.component";
 import { NgModule } from "@angular/core";
 import { LoginComponent } from "./paginas/login/login.component";
+import { InicioPortalComponent } from "app/portais/paginas/inicio-portal/inicio-portal.component";
 
 const rotas: Routes = [
 	{
@@ -18,7 +19,11 @@ const rotas: Routes = [
 		component: LoginComponent,
 	},
 	{
-		path: 'login',
+		path: "portal",
+		component: InicioPortalComponent
+	},
+	{
+		path: 'portal',
 		children: [
 			{
 				path: 'usuarios',

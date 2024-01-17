@@ -5,6 +5,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 import { CoreRoutingModule } from "./core-routing.module";
 import { SharedModule } from "../shared/shared.module";
+import { HttpClientModule } from "@angular/common/http";
+
 
 @NgModule
 ({
@@ -15,6 +17,7 @@ import { SharedModule } from "../shared/shared.module";
     ReactiveFormsModule,
     SharedModule,
     CommonModule,
+    HttpClientModule
   ],
   providers: []
 })

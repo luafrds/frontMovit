@@ -1,3 +1,4 @@
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { environment } from "src/environments/environment";
 
@@ -6,4 +7,6 @@ import { environment } from "src/environments/environment";
 })
 export class MembroService {
   private urlBase = environment.config.apis.movit;
+
+  constructor(private http: HttpClient) {}
 }
