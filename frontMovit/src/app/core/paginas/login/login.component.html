@@ -7,19 +7,20 @@
        <h6 class="prevenirSelect">Realize seu login para continuar</h6>
        <div id="loginForm">
 
-           <form action="" method="POST">
+           <form action="" method="POST" [formGroup]="loginForm" (submit)="logarUsuario()">
                <div id="usuarioForm">
                    <label class="imgUsuario" for="usuarioLogin">Usuario</label>
-                   <input class="inputLogin" type="text" placeholder="Login" id="usuarioLogin" required>
+                   <input class="inputLogin" formControlName="email" type="text" placeholder="Login" id="usuarioLogin" required>
                </div>
 
                <div id="senhaForm">
                    <label class="imgSenha" for="senhaLogin">Senha</label>
-                   <input class="inputLogin" type="password" id="senhaLogin" placeholder="Senha" required>
+                   <input class="inputLogin" formControlName="senha" type="password" id="senhaLogin" placeholder="Senha" required>
                </div>
 
                <div id="botaoLogin">
-                   <button type="submit" value="submitLogin">ENTRAR</button>
+                   <button type="submit" value="submitLogin" [attr.disabled]="loginForm.invalid || null">ENTRAR</button>
+                   <div *ngIf="mensagemErro" class="alert alert-danger alert-dismissible d-flex align-items-center fade show">{{mensagemErro}}</div>
                </div>
            </form>
        </div>
