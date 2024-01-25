@@ -6,6 +6,10 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 :root {
+  --primary: #112b6d;
+  --secondary: #ffc107;
+  --secondary-hover: #b88a00;
+  --success: #43c452;
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -19,9 +23,6 @@
   --white: #fff;
   --gray: #6c757d;
   --gray-dark: #343a40;
-  --primary: #112b6d;
-  --secondary: #ffc107;
-  --success: #43c452;
   --info: #60c3ff;
   --warning: #f07a19;
   --danger: #ef0505;
@@ -42,6 +43,7 @@
 *{
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -340,7 +342,7 @@ body#paginaLogin{
 }
 
 #paginaLogin{
-  background: #002E6B;
+  background: var(--primary);
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -356,7 +358,7 @@ body#paginaLogin{
 #tituloLogin h3{
   font-family: "Jost";
   font-size: 70%;
-  color: #FFD747;
+  color: var(--secondary);
   letter-spacing: 7px;
   font-weight: bold;
 }
@@ -415,13 +417,12 @@ body#paginaLogin input[type=text], body#paginaLogin input[type=password] {
 
 body#paginaLogin input:focus {
   outline: none;
-  /*box-shadow: 0 0 1px 0.5px #fff;*/
 }
 
 body#paginaLogin button[type=submit]{
   margin-top: 5rem;
-  background-color: #FFD747;
-  color:#002E6B;
+  background-color: var(--secondary);
+  color:var(--primary);
   border: none;
   width: 300px;
   height: 40px;
@@ -430,7 +431,6 @@ body#paginaLogin button[type=submit]{
 }
 
 body#paginaLogin button[type=submit]:hover{
-  /*box-shadow: 0 2px 5px .4px #000000;*/
   cursor: pointer;
   width: 310px;
   height: 46px;
@@ -440,3 +440,182 @@ body#paginaLogin button[type=submit]:hover{
   font-size: 105%;
 }
 /*FIM TELA LOGIN*/
+
+/*HEADER*/
+
+
+header#headerInicio{
+  display: grid;
+  background: var(--primary);
+  height: 20em;
+}
+
+#logo-movit{
+  grid-area: a;
+}
+
+#logo-movit img{
+  width: 200px;
+  margin-bottom: -15px;
+}
+
+/*NAVBAR*/
+header#headerInicio nav{
+  user-select: none; 
+  grid-area: b;
+  display: flex;
+  justify-content: end;
+}
+
+header#headerInicio li{
+  margin: 0.7em 0.5em;
+}
+
+header#headerInicio ul li{
+  display: inline-block;
+  position: relative;
+}
+
+header#headerInicio ul li a{
+  display: block;
+  text-decoration: none;
+  padding: 0;
+  color: var(--secondary);
+  margin: 10px;
+  text-align: center;
+}
+
+header#headerInicio ul li a:hover{
+  color: var(--secondary-hover);
+  transition: all .2s;
+}
+
+#headerInicio ul li ul.dropdown li{
+  display: block;
+  margin: 0;
+}
+
+#headerInicio ul li ul.dropdown{
+  background: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  display: none;
+  border-radius: 0 0 10px 10px;
+}
+
+#headerInicio ul li ul.dropdown li:hover{
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+
+}
+
+#headerInicio li.dropmenu:hover{
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px 10px 0 0;
+}
+
+#headerInicio .dropmenu > a{
+  pointer-events: none;
+}
+
+#headerInicio ul li:hover ul.dropdown{
+  display: block;
+}
+
+#headerInicio ul.dropdown a{
+  margin: 4px;
+  line-height: 50px;
+}
+
+#headerInicio ul.dropdown a:last-child{
+  margin-bottom: 0;
+  padding-bottom: 4px;
+}
+
+
+#headerInicio .contrib{
+  background-color: var(--secondary);  
+  color: var(--primary);
+  border-radius: 10px;
+  font-weight: bold;
+  padding: 10px 15px; 
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.445);
+}
+
+#headerInicio .contrib:hover{
+  color: #0650b3;
+}
+
+/*FIM NAVBAR*/
+
+.sobre{
+  grid-area: c;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  text-align: center;
+  color: var(--secondary);
+  margin-bottom: 1rem;
+}
+
+.sobre h5{
+  padding-bottom: 0.5rem;
+  font-size: 0.9em;
+  font-weight: lighter;
+}
+
+.sobre h4{
+  font-weight: bolder;
+}
+
+@media (min-width: 0px) {
+  header#headerInicio { 
+    grid-template-areas: 
+    "a"
+    "b"
+    "c";
+    grid-template-rows: auto; 
+  }
+
+  #logo-movit{
+    justify-self: center;
+  }
+
+  header#headerInicio nav ul{
+    text-align: center;
+  }
+
+  header#headerInicio ul li a{
+    font-size: 13px;
+  }
+
+  #headerInicio .contrib{
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 576px){
+  header#headerInicio{
+  grid-template-areas: 
+  "a b"
+  "c c";
+  grid-template-columns: auto 1fr;
+  grid-template-rows:auto 1fr;
+  }
+
+  header#headerInicio ul li a{
+    font-size: 16px;
+  }
+
+  #headerInicio .contrib{
+    font-size: 18px;
+  }
+
+  #headerInicio .contrib:hover{
+    font-size: 19px;
+  }
+}
+
+/*FIM HEADER*/
