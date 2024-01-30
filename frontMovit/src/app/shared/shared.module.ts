@@ -5,6 +5,8 @@ import { RouterModule } from "@angular/router";
 import { HeaderInicioComponent } from './components/header-inicio/header-inicio.component';
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { TokenInterceptorService } from "./interceptors/http.interceptor";
+import { ToastrModule } from "ngx-toastr";
+import { NgxSpinnerModule } from "ngx-spinner";
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { TokenInterceptorService } from "./interceptors/http.interceptor";
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
+    ToastrModule.forRoot(),
+    NgxSpinnerModule
   ],
   exports: [
     HeaderInicioComponent

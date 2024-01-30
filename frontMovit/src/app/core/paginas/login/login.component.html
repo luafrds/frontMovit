@@ -20,7 +20,6 @@
 
                <div id="botaoLogin">
                    <button type="submit" value="submitLogin" [attr.disabled]="loginForm.invalid || null">ENTRAR</button>
-                   <div *ngIf="mensagemErro" class="alert alert-danger alert-dismissible d-flex align-items-center fade show">{{mensagemErro}}</div>
                </div>
            </form>
        </div>

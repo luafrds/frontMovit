@@ -6,7 +6,8 @@ import { CommonModule } from "@angular/common";
 import { CoreRoutingModule } from "./core-routing.module";
 import { SharedModule } from "../shared/shared.module";
 import { HttpClientModule } from "@angular/common/http";
-
+import { NgxSpinnerModule } from "ngx-spinner";
+import { ToastrModule } from "ngx-toastr";
 
 @NgModule
 ({
@@ -17,7 +18,9 @@ import { HttpClientModule } from "@angular/common/http";
     ReactiveFormsModule,
     SharedModule,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxSpinnerModule,
+    ToastrModule.forRoot()
   ],
   providers: []
 })
