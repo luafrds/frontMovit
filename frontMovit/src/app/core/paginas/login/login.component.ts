@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LOGIN_FORM } from 'app/core/formularios/login-form';
 import { LoginService } from 'app/core/services/login.service';
 import { ToastrService } from 'ngx-toastr';
 
@@ -11,20 +12,15 @@ import { ToastrService } from 'ngx-toastr';
 export class LoginComponent {
 
   loginForm!: FormGroup;
-  mensagemErro!: string;
-
 
   constructor(
     private readonly formBuilder: FormBuilder,
     private readonly router: Router,
     private loginService: LoginService,
-    private readonly toastr: ToastrService) { }
+    private readonly toastr: ToastrService) {}
 
   ngOnInit(): void {
-    this.loginForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      senha: ['', [Validators.required]]
-    });
+    this.loginForm = this.formBuilder.group(LOGIN_FORM);
   }
 
   logarUsuario() {
